@@ -1,2 +1,2 @@
 print("Welcome to Learning Python")
-print("This is a new line")
+print("My name is Muhammad Ibrahim")
