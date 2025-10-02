@@ -9,3 +9,6 @@ participant_2 = input("Enter your name: ")
 
 #output
 print(Welcome_message + participant_1 + " and " + participant_2)
+
+if participant_1 == "Ibrahim" or participant_2 == "Annas": 
+    print("your teacher is asad uncle")
