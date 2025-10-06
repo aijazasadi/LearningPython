@@ -1,6 +1,6 @@
 #decleration
-Welcome_message = "Welcome to Learning python on Vs "
-participant_1 = input("Enter your name: ")
-participant_2 = input("Enter your name: ")
+WELCOME_MESSAGE = "Welcome to Learning python on Vs "
+participant_1 = input("Enter your name participant1: ")
+participant_2 = input("Enter your name participant2: ")
 
-print(Welcome_message + participant_1 + " and " + participant_2)
+print(WELCOME_MESSAGE + participant_1 + " and " + participant_2)
