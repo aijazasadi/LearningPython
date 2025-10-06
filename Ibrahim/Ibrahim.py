@@ -10,3 +10,16 @@ teacher_1 = input("Enter your teacher's name: ")
 
 #output
 print(Welcome_message + participant_1 + " and " + participant_2 + " you are learning Python with " + teacher_1)
+
+"""
+This is a multi-line comment that i learned so i put it here 
+to remember it
+"""
+
+#legal variable names
+#constant variable usually in uppercase
+#participant_1 = participant_2 overwrite
+#write cls to clear the terminal
+#print("Annas" == "Annas")
+#type casting
+#the type of variable 
