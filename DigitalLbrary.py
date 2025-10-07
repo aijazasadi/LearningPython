@@ -1,11 +1,15 @@
-book_name
-#dd-mm-yyyy
-book_issue_date
-#dd-mm-yyyy
-book_return_date
-book_author
-book_genre
-book_publisher
-book_language
-# 1-4028-9462-7
-book_ISBN
+#book_name
+book_name = input("Enter book name: ")
+
+#book_issue_date
+book_issue_date = input("Enter book issue date (dd-mm-yyyy): ")
+
+#book_author
+book_author = input("Enter book author: ")
+
+#book_ISBN
+#1-4028-9462-7
+book_ISBN = input("Enter book ISBN: ")
+
+#output
+print(book_name , "," , book_issue_date , "," , book_author , "," , book_ISBN)
