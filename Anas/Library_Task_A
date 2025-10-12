@@ -1,4 +1,15 @@
-Books = ['Why nations go to war', 'The Art of War', 'The Prince, On War', 'The 33 Strategies of War', 'The Campaigns of Alexander',]
+Why_nations_go_to_war = "name: Why nations go to war, author: John G. Stoessinger, genre: Political Science, publisher: Cengage Learning, language: English, issue_date: 01-01-2024, return_date: 15-01-2024"
+The_Art_of_War = "name: The Art of War, author: Sun Tzu, genre: Military Strategy, publisher: Oxford University Press, language: English, issue_date: 05-02-2024, return_date: 20-02-2024"
+The_Prince = "name: The Prince, author: Niccolò Machiavelli, genre: Political Philosophy, publisher: Penguin Classics, language: English, issue_date: 10-03-2024, return_date: 25-03-2024"
+On_War = "name: On War, author: Carl von Clausewitz, genre: Military Theory, publisher: Princeton University Press, language: English, issue_date: 15-04-2024, return_date: 30-04-2024"
+The_33_Strategies_of_War = "name: The 33 Strategies of War, author: Robert Greene, genre: Self-Help, publisher: Profile Books, language: English, issue_date: 20-05-2024, return_date: 04-06-2024"
+The_Campaigns_of_Alexander = "name: The Campaigns of Alexander, author : Arrian, genre: History, publisher: Penguin Classics, language: English, issue_date: 25-06-2024, return_date: 10-07-2024"
+
+
+
+
+
+Books = [Why_nations_go_to_war, The_Art_of_War, The_Prince, On_War, The_33_Strategies_of_War, The_Campaigns_of_Alexander]
 
 
 book_name = input("Enter book name: ")
@@ -12,4 +23,24 @@ book_publisher = input("Enter book publisher: ")
 book_language = input("Enter book language: ")
 
 
-print(Books)
+print('Why nations go to war', 'The_Art_of_War', 'The_Prince, On_War', 'The_33_Strategies_of_War', 'The_Campaigns_of_Alexander')
+WHICH_BOOK = input("which book you want to issue: ")
+
+if WHICH_BOOK == "Why nations go to war":
+    print(Why_nations_go_to_war)
+elif WHICH_BOOK == "The_Art_of_War":
+    print(The_Art_of_War)
+elif WHICH_BOOK == "The_Prince":
+    print(The_Prince)
+elif WHICH_BOOK == "On_War":
+    print(On_War)
+elif WHICH_BOOK == "The_33_Strategies_of_War":
+    print(The_33_Strategies_of_War)
+elif WHICH_BOOK == "The_Campaigns_of_Alexander":
+    print(The_Campaigns_of_Alexander)
+else:
+    print("Book not available")
+
+print("You will issue this book by", book_issue_date, "You will return this book by", book_return_date)
+
+
