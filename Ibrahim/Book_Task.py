@@ -7,6 +7,15 @@ Books = ["Atomic Habits", "Breif history of Time", "Breif awnsers to big Questio
 Authors = ["James Clear", "Stephen Hawking", "Stephen Hawking", "Neil deGrasse Tyson", "Sun Tzu"]
 Genres = ["Self-help", "Science", "Science", "Science", "Military Strategy"]
 
-sep = " / " 
+
+book_number = (input("Which book details do you want to see?: "))
+
+print (Books[int(book_number)] , Authors[int(book_number)] , Genres[int(book_number)], sep= " / ")
+
 
 # Incomplete code above i dont know how to fetch 3rd or 4th book with related information yet
+
+# print(Books[0] , Authors[0] , Genres[0], sep= " / ")
+#print(Books[1] , Authors[1] , Genres[1], sep= " / ")
+#print(Books[2] , Authors[2] , Genres[2], sep= " / ")
+#print(Books[3] , Authors[3] , Genres[3], sep= " / ")
