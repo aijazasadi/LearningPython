@@ -16,10 +16,10 @@
 
 
 
-print("Asad" == "Asad")
+# print("Asad" == "Asad")
 #type casting
-print("Asad " + str(3))
-print(Welcome_message + participant_1 + " and " + participant_2)
+# print("Asad " + str(3))
+# print(Welcome_message + participant_1 + " and " + participant_2)
 
 #Multiline string
 MESSAGE = """This is a simple program to demonstrate input and output in Python.  
