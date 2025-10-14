@@ -23,3 +23,15 @@ to remember it
 #print("Annas" == "Annas")
 #type casting
 #the type of variable 
+#multi line string
+#lists 
+#mixed Lists
+#sep = " / "
+#multi dimentional array or lists 
+#index 
+#len function
+#if statement
+#Functions 
+#f or inline comment
+#strip()
+#lower()
