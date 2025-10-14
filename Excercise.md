@@ -8,3 +8,7 @@
 - Fetch the correct book name, author, genre and all the required vars by index 
 - Hint You will have to convert index to int using int(str)
 - Check if the index is not out of bounds
+
+# Excercise 14-10-25
+- Practice For Loop
+- Try Accessing All elements and element by index using functions
