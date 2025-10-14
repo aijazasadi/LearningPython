@@ -8,9 +8,9 @@ Authors = ["James Clear", "Stephen Hawking", "Stephen Hawking", "Neil deGrasse T
 Genres = ["Self-help", "Science", "Science", "Science", "Military Strategy"]
 
 
-book_number = (input("Which book details do you want to see?: "))
+book_number = int(input("Which book details do you want to see?: "))
 
-print (Books[int(book_number)] , Authors[int(book_number)] , Genres[int(book_number)], sep= " / ") 
+# print (Books[int(book_number)] , Authors[int(book_number)] , Genres[int(book_number)], sep= " / ") 
 
 if(book_number >=0 or book_number < len(Books)):
     print("You have selected book: ", Books[int(book_number)])

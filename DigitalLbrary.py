@@ -25,18 +25,39 @@ book_return_dates = ['01-02-2020', '15-04-2021', '22-08-2019', '10-11-2018', '05
 book_authors = ['Zed A. Shaw', 'Al Sweigart', 'Eric Matthes', 'Luciano Ramalho', 'Brett Slatkin']
 
 books=[book_names, book_issue_dates, book_return_dates, book_authors]
-#output
-# print("Available books in the library: ", *book_names, sep = ", ")
-# print("Book 1 ", book_names[0])
-# print("Total Books ", len(book_names))
 
-input_book_index = int(input("Enter book index (0-4): "))
+books = [book_names[0], book_issue_dates[0], book_return_dates[0], book_authors[0]]
+
+books =[
+    [book_names[0], book_issue_dates[0], book_return_dates[0], book_authors[0]], #[0][0]
+    [book_names[1], book_issue_dates[1], book_return_dates[1], book_authors[1]], #
+    [book_names[2], book_issue_dates[2], book_return_dates[2], book_authors[2]],
+    [book_names[3], book_issue_dates[3], book_return_dates[3], book_authors[3]],
+    [book_names[4], book_issue_dates[4], book_return_dates[4], book_authors[4]]
+]   
+
+# print(books[0][3])
+
+#function to print book details by index
+def print_book_details(index):
+    if index >= 0 and index < len(books):
+        print("Book Name: ", books[index][0])
+        print("Book Issue Date: ", books[index][1])
+        print("Book Return Date: ", books[index][2])
+        print("Book Author: ", books[index][3])
+    else:
+        print("Invalid book index")
+#printing all books
+def print_all_books():
+    for i in range(len(books)):
+        print(f"Details of Book {i}:")
+        print_book_details(i)
+        print("-" * 20)
 
 
-if(input_book_index >=0 or input_book_index < len(book_names)): 
-    print("You have selected book: ", book_names[input_book_index])
-    print("Book Author: ", book_authors[input_book_index])
-    print("Book Issue Date: ", book_issue_dates[input_book_index])
-    print("Book Return Date: ", book_return_dates[input_book_index])
-else:
-    print("Invalid book index")
+# input_book_index = int(input("Enter book index (0-4): "))
+print_all_books()
+
+book_1 = 'Zed A. Shaw '
+book_2 = 'zed A. Shaw'
+print( book_1.strip().lower() == book_2.strip().lower())
