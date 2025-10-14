@@ -58,6 +58,11 @@ def print_all_books():
 # input_book_index = int(input("Enter book index (0-4): "))
 print_all_books()
 
-book_1 = 'Zed A. Shaw '
-book_2 = 'zed A. Shaw'
-print( book_1.strip().lower() == book_2.strip().lower())
+def get_book_by_name(book_name, index):
+    for i in range(len(books)):
+        if books[i][0].strip().lower() == book_name.strip().lower(): #map book
+            return books[i][index]
+    return None
+    
+
+print(get_book_by_name("Learn Python the Hard Way", 3)) # should return Zed A. Shaw
