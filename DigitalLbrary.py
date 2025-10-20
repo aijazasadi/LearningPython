@@ -49,20 +49,25 @@ def print_book_details(index):
         print("Invalid book index")
 #printing all books
 def print_all_books():
-    for i in range(len(books)):
-        print(f"Details of Book {i}:")
-        print_book_details(i)
+    for book in range(len(books)):
+        print(f"Details of Book {book}:")
+        print_book_details(book)
         print("-" * 20)
 
-
-# input_book_index = int(input("Enter book index (0-4): "))
-print_all_books()
-
 def get_book_by_name(book_name, index):
-    for i in range(len(books)):
-        if books[i][0].strip().lower() == book_name.strip().lower(): #map book
-            return books[i][index]
+    for book in range(len(books)):
+        print(book_name.strip().lower() in books[book][0].strip().lower())
+        if books[book][0].strip().lower() in book_name.strip().lower(): #map book by title
+            return books[book][index]
     return None
-    
+# input_book_index = int(input("Enter book index (0-4): "))
+# print_all_books()
 
-print(get_book_by_name("Learn Python the Hard Way", 3)) # should return Zed A. Shaw
+def change_book(new_book_name, book_index):
+    if book_index >= 0 and book_index < len(books):
+        books[book_index][0] = new_book_name
+    else:
+        print("Invalid book index")   
+
+print(get_book_by_name("Python the Hard Way", 0)) # should return Zed A. Shaw
+
