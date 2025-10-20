@@ -7,13 +7,11 @@ book_name = ["Atomic Habits", "Breif history of Time", "Breif awnsers to big Que
 authors_name = ["James Clear", "Stephen Hawking", "Stephen Hawking", "Neil deGrasse Tyson", "Sun Tzu"]
 genres_names = ["Self-help", "Science", "Science", "Science", "Military Strategy"]
 
-
-book_number = int(input("Which book details do you want to see?: "))
-
-
-if book_number >=0 and book_number < len(book_name):
-    print (book_name[int(book_number)] , authors_name[int(book_number)] , genres_names[int(book_number)], sep= " / ")
-else:
+def print_book_details():
+ if book_number >=0 and book_number < len(book_name):
+    print (book_name[int(book_number)] , authors_name[int(book_number)] , genres_names[int(book_number)], sep= " / " )
+ else:
     print("Invalid book number")
 
-    
+book_number = int(input("Which book details do you want to see?: "))
+print_book_details()
