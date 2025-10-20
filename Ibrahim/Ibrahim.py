@@ -31,7 +31,17 @@ to remember it
 #index 
 #len function
 #if statement
-#Functions 
+#Functions (def name():)
 #f or inline comment
-#strip()
-#lower()
+#.strip()
+#.lower()
+#for loop
+#range()
+#function with return value
+#in function
+#join as a caracter
+#.capitalize()
+#.upper()
+#.swapcase()
+#reverse()
+

@@ -1,8 +1,8 @@
-#WELCOME_MESSAGE = "Welcome to Learning python on VsCode"
+WELCOME_MESSAGE = "Welcome to Learning python on VsCode"
 #participant1 for the LibraryManagementSystem
-# participant_1 = input("Enter participiant1 : ")
+participant_1 = input("Enter participiant1 : ")
 # #participant2 for the LibraryManagementSystem
-# participant_2 = input("Enter participiant2: ")
+participant_2 = input("Enter participiant2: ")
 
 
 #Welcome_message = "Welcome to Learning python on Vs "
@@ -16,10 +16,10 @@
 
 
 
-# print("Asad" == "Asad")
+print("Asad" == "Asad")
 #type casting
-# print("Asad " + str(3))
-# print(Welcome_message + participant_1 + " and " + participant_2)
+print("Asad " + str(3))
+print(WELCOME_MESSAGE + participant_1 + " and " + participant_2)
 
 #Multiline string
 MESSAGE = """This is a simple program to demonstrate input and output in Python.  
