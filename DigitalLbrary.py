@@ -47,12 +47,14 @@ def print_book_details(index):
         print("Book Author: ", books[index][3])
     else:
         print("Invalid book index")
+        
 #printing all books
 def print_all_books():
-    for book in range(len(books)):
+     for book in range(len(books)):
         print(f"Details of Book {book}:")
         print_book_details(book)
         print("-" * 20)
+
 
 def get_book_by_name(book_name, index):
     for book in range(len(books)):
@@ -60,6 +62,7 @@ def get_book_by_name(book_name, index):
         if books[book][0].strip().lower() in book_name.strip().lower(): #map book by title
             return books[book][index]
     return None
+    
 # input_book_index = int(input("Enter book index (0-4): "))
 # print_all_books()
 
@@ -70,4 +73,3 @@ def change_book(new_book_name, book_index):
         print("Invalid book index")   
 
 print(get_book_by_name("Python the Hard Way", 0)) # should return Zed A. Shaw
-
