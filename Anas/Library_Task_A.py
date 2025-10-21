@@ -78,9 +78,9 @@ books = [
 ]
 
 
-input_book_index = int(input("Enter book index (0-4): "))
 
 
+"""
 if(input_book_index >=0 or input_book_index < len(book_names)): 
     print("You have selected book: ", book_names[input_book_index])
     print("Book Author: ", book_authors[input_book_index])
@@ -88,3 +88,13 @@ if(input_book_index >=0 or input_book_index < len(book_names)):
     print("Book Return Date: ", book_return_dates[input_book_index])
 else:
     print("Invalid book index")
+"""
+
+def print_book_details():
+ if input_book_index >=0 and input_book_index < len(book_names):
+    print (book_names[int(input_book_index)] , book_authors[int(input_book_index)] , book_issue_dates[int(input_book_index)] , book_return_dates[int(input_book_index)],  sep= " / " )
+ else:
+    print("Invalid book number")
+
+input_book_index = int(input("Enter book index (0-4): "))
+print_book_details()
