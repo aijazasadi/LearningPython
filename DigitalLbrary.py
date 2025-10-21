@@ -1,15 +1,8 @@
-#book_name
-#dd-mm-yyyy
-#book_issue_date
-#dd-mm-yyyy
-#book_return_date
-#book_author
-#book_genre
-#book_publisher
-#book_language
-# 1-4028-9462-7
-#book_ISBN
-
+#constants for book details indices
+BOOK_NAMES = 0
+ISSUE_DATES = 1
+RETURN_DATES = 2
+AUTHORS = 3 
 
 # list of book names
 #length book
@@ -56,20 +49,27 @@ def print_all_books():
         print("-" * 20)
 
 
-def get_book_by_name(book_name, index):
+def get_book(to_search, book_index):
     for book in range(len(books)):
-        print(book_name.strip().lower() in books[book][0].strip().lower())
-        if books[book][0].strip().lower() in book_name.strip().lower(): #map book by title
-            return books[book][index]
+        if to_search.strip().lower() in books[book][book_index].strip().lower(): 
+            return books[book]
     return None
+
+def update_book(new_change, book_index):
+    books[book_index] = new_change    
     
-# input_book_index = int(input("Enter book index (0-4): "))
-# print_all_books()
+def delete_book(book_index): #remove book from the books list (books.pop() will remove the last book)
+    books.remove(current_book)
 
-def change_book(new_book_name, book_index):
-    if book_index >= 0 and book_index < len(books):
-        books[book_index][0] = new_book_name
-    else:
-        print("Invalid book index")   
+def add_book(new_book): #appends to the books list at the end
+    books.append(new_book)
 
-print(get_book_by_name("Python the Hard Way", 0)) # should return Zed A. Shaw
+current_book = get_book("A. Shaw   ", AUTHORS) # should return Zed A. Shaw
+current_book[BOOK_NAMES] = "Atomic Habits"
+update_book(current_book, BOOK_NAMES)
+
+new_book = ["Deep Work", "12-12-2023", "12-01-2024", "Cal Newport"]
+
+add_book(new_book)
+delete_book(current_book)
+print_all_books()
