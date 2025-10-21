@@ -29,8 +29,6 @@ books =[
     [book_names[4], book_issue_dates[4], book_return_dates[4], book_authors[4]]
 ]   
 
-# print(books[0][3])
-
 #function to print book details by index
 def print_book_details(index):
     if index >= 0 and index < len(books):
@@ -47,7 +45,6 @@ def print_all_books():
         print(f"Details of Book {book}:")
         print_book_details(book)
         print("-" * 20)
-
 
 def get_book(to_search, book_index):
     for book in range(len(books)):
