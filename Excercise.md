@@ -12,3 +12,7 @@
 # Excercise 14-10-25
 - Practice For Loop
 - Try Accessing All elements and element by index using functions
+
+# Exercise 20/10/25
+- Define methods to add books to the books array
+- try changing book name again define methods
