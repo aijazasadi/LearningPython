@@ -44,4 +44,9 @@ to remember it
 #.upper()
 #.swapcase()
 #reverse()
+#Class (Constant not fully studied yet)
+#Basic Constants 
+#.append()
+#.pop()
+#.remove()
 
