@@ -32,10 +32,10 @@ books =[
 #function to print book details by index
 def print_book_details(index):
     if index >= 0 and index < len(books):
-        print("Book Name: ", books[index][0])
-        print("Book Issue Date: ", books[index][1])
-        print("Book Return Date: ", books[index][2])
-        print("Book Author: ", books[index][3])
+        print("Book Name: ", books[index][BOOK_NAMES])
+        print("Book Issue Date: ", books[index][ISSUE_DATES])
+        print("Book Return Date: ", books[index][RETURN_DATES])
+        print("Book Author: ", books[index][AUTHORS])
     else:
         print("Invalid book index")
         
@@ -52,21 +52,33 @@ def get_book(to_search, book_index):
             return books[book]
     return None
 
-def update_book(new_change, book_index):
-    books[book_index] = new_change    
+def update_book(book, book_arg, new_change):
+    book[book_arg] = new_change
     
-def delete_book(book_index): #remove book from the books list (books.pop() will remove the last book)
-    books.remove(current_book)
+def delete_book(bookToDelete): #remove book from the books list (books.pop() will remove the last book)
+    books.remove(bookToDelete)
 
 def add_book(new_book): #appends to the books list at the end
     books.append(new_book)
 
-current_book = get_book("A. Shaw   ", AUTHORS) # should return Zed A. Shaw
-current_book[BOOK_NAMES] = "Atomic Habits"
-update_book(current_book, BOOK_NAMES)
+current_book = get_book("Brett   ", AUTHORS) # should return Zed A. Shaw
+# current_book[BOOK_NAMES] = "Atomic Habits"
+# update_book(current_book, BOOK_NAMES, "New Ways to Win")
+# update_book(current_book, BOOK_NAMES)
 
 new_book = ["Deep Work", "12-12-2023", "12-01-2024", "Cal Newport"]
 
 add_book(new_book)
 delete_book(current_book)
-print_all_books()
+# print_all_books()
+# books.sort()
+# print(books[books.index(current_book)])
+
+#run this code to see what index is returned
+# indexcurrentbook = books.index(current_book) 
+# print(indexcurrentbook)
+# books.pop(indexcurrentbook)
+
+books.sort()
+
+print(*books, sep=f"\n")
