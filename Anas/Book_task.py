@@ -1,6 +1,6 @@
 book_names = [
     'Why nations go to war', 
-    'The Art of War',
+    'The Art Of War',
     'The Prince', 
     'On War', 
     'The 33 Strategies of War' 
@@ -35,17 +35,6 @@ books = [
 ]
 
 
-
-
-"""
-if(input_book_index >=0 or input_book_index < len(book_names)): 
-    print("You have selected book: ", book_names[input_book_index])
-    print("Book Author: ", book_authors[input_book_index])
-    print("Book Issue Date: ", book_issue_dates[input_book_index])
-    print("Book Return Date: ", book_return_dates[input_book_index])
-else:
-    print("Invalid book index")
-"""
 all_details = [book_names, book_issue_dates, book_return_dates, book_authors]
 
 
@@ -53,8 +42,8 @@ print("welcome to my library system")
 
 print("1. View Details Of Books")
 print("2. Check Availability Of Books")
-print("3. Remove A Book")   
-print("4. Add A Book")
+print("3. Add a Book")   
+print("4. Remove A Book")
 
 choice = int(input("Enter your choice: "))
 
@@ -74,6 +63,31 @@ def print_book_details():
  else:
     print("Invalid book number")
 
+def add_book():
+    new_book_name = input("Enter new book name: ")
+    new_book_author = input("Enter new book author: ")
+    new_book_issue_date = input("Enter new book issue date (dd-mm-yyyy): ")
+    new_book_return_date = input("Enter new book return date (dd-mm-yyyy): ")
+    
+    book_names.append(new_book_name)
+    book_authors.append(new_book_author)
+    book_issue_dates.append(new_book_issue_date)
+    book_return_dates.append(new_book_return_date)
+    
+    print("Book added successfully!")
+
+def remove_book():
+    remove_book_name = input("Enter book name to remove: ")
+    if remove_book_name in book_names:
+        index = book_names.index(remove_book_name)
+        book_names.pop(index)
+        book_authors.pop(index)
+        book_issue_dates.pop(index)
+        book_return_dates.pop(index)
+        print("Book removed successfully!")
+    else:
+        print("Book not found!")
+
 
 if choice == 1:
     
@@ -88,3 +102,12 @@ if search_book(search_input, book_index=0):
     print("Found", search_input, "in the book details.")
 else: 
     print(search_input, "not found in the book details.")
+
+if choice == 3:
+    print(book_names)
+    add_book()
+
+if choice == 4:
+    print(book_names)
+    
+    remove_book()
