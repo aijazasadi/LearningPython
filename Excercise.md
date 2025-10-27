@@ -16,3 +16,8 @@
 # Exercise 20/10/25
 - Define methods to add books to the books array
 - try changing book name again define methods
+
+# Excercise 27/10/25
+- Add a new book with the same author
+- Now that you have two authors there should multiple books returned in find/get/search book function
+- Try and access book details of the found book resolve/change code  
