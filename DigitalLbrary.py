@@ -30,43 +30,49 @@ books =[
 ]   
 
 #function to print book details by index
-def print_book_details(index):
-    if index >= 0 and index < len(books):
-        print("Book Name: ", books[index][0])
-        print("Book Issue Date: ", books[index][1])
-        print("Book Return Date: ", books[index][2])
-        print("Book Author: ", books[index][3])
+def print_book_details(book):
+    books.sort()
+    if(book in books):
+        print("Book Name: ", book[BOOK_NAMES])
+        print("Book Issue Date: ", book[ISSUE_DATES])
+        print("Book Return Date: ", book[RETURN_DATES])
+        print("Book Author: ", book[AUTHORS])
     else:
-        print("Invalid book index")
+        print("Invalid book ")
         
 #printing all books
 def print_all_books():
-     for book in range(len(books)):
+     books.sort()
+     for book in books:
         print(f"Details of Book {book}:")
         print_book_details(book)
         print("-" * 20)
 
 def get_book(to_search, book_index):
-    for book in range(len(books)):
-        if to_search.strip().lower() in books[book][book_index].strip().lower(): 
-            return books[book]
+    for book in books:
+        if(to_search.strip().lower() in book[book_index].lower()):
+            return book
     return None
 
-def update_book(new_change, book_index):
-    books[book_index] = new_change    
+def update_book(book, book_arg, new_change):
+    book[book_arg] = new_change
+    books.sort()
     
-def delete_book(book_index): #remove book from the books list (books.pop() will remove the last book)
-    books.remove(current_book)
+def delete_book(bookToDelete): #remove book from the books list (books.pop() will remove the last book)
+    books.remove(bookToDelete)
+    books.sort()
 
 def add_book(new_book): #appends to the books list at the end
     books.append(new_book)
+    books.sort()
 
-current_book = get_book("A. Shaw   ", AUTHORS) # should return Zed A. Shaw
-current_book[BOOK_NAMES] = "Atomic Habits"
-update_book(current_book, BOOK_NAMES)
+current_book = get_book("Brett   ", AUTHORS) # should return Zed A. Shaw
+# print_book_details(current_book)
 
 new_book = ["Deep Work", "12-12-2023", "12-01-2024", "Cal Newport"]
 
+# update_book(current_book, BOOK_NAMES, "Changed Book Title")
+
 add_book(new_book)
-delete_book(current_book)
+# print(*books, sep="\n")
 print_all_books()

@@ -17,7 +17,7 @@ def print_book_details():
 
 def search_book(to_search, book_index):
     for book in range(len(all_details)):
-        if to_search.lower() in all_details[book_index][book].lower():
+        if to_search.strip().lower() in all_details[book_index][book].lower():
             return all_details
     return None
 
