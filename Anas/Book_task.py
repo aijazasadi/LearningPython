@@ -1,10 +1,11 @@
 book_names = [
-    'Why nations go to war', 
+    'Why nations go to war',
     'The Art Of War',
-    'The Prince', 
-    'On War', 
-    'The 33 Strategies of War' 
+    'The Prince',
+    'On War',
+    'The 33 Strategies of War'
 ]
+
 book_issue_dates = [  # example dates
     '01-10-2025',
     '15-10-2025',
@@ -12,6 +13,7 @@ book_issue_dates = [  # example dates
     '10-10-2025',
     '05-10-2025'
 ]
+
 book_return_dates = [  # example dates
     '21-10-2026',
     '15-12-2026',
@@ -19,6 +21,7 @@ book_return_dates = [  # example dates
     '10-11-2026',
     '05-12-2026'
 ]
+
 book_authors = [
     'John G. Stoessinger',
     'Sun Tzu',
@@ -27,42 +30,38 @@ book_authors = [
     'Carl von Clausewitz'
 ]
 
-books = [
-    book_names,
-    book_issue_dates,
-    book_return_dates,
-    book_authors
-]
-
+books = [book_names, book_issue_dates, book_return_dates, book_authors]
 all_details = [book_names, book_issue_dates, book_return_dates, book_authors]
 
-print("Welcome to my library system\n")
-
-print("1. View Details Of All Books")
+print("welcome to my library system")
+print("1. View Details Of Books")
 print("2. Check Availability Of Books")
-print("3. Add a Book")   
+print("3. Add a Book")
 print("4. Remove A Book")
 
-choice = int(input("\nEnter your choice: "))
-
-def get_safe_length():
-    return min(len(book_names), len(book_authors), len(book_issue_dates), len(book_return_dates))
+choice = int(input("Enter your choice: "))
 
 
-def search_book(to_search):
-    found_books = []
-    length = get_safe_length()
-    for i in range(length):
-        if to_search.lower() in book_names[i].lower() or to_search.lower() in book_authors[i].lower():
-            found_books.append(i)
-    return found_books if found_books else None
+def search_book(to_search, book_index):
+    for book in range(len(all_details)):
+        if to_search.lower() in all_details[book_index][book].lower():
+            return all_details
+    return None
 
 
 def print_book_details():
-    print("\nAll Books in Library:\n")
-    length = get_safe_length()
-    for i in range(length):
-        print(f"{book_names[i]} / {book_authors[i]} / {book_issue_dates[i]} / {book_return_dates[i]}")
+    print(book_names)
+    input_book_index = int(input("Enter book index (0-4): "))
+    if input_book_index >= 0 and input_book_index < len(book_names):
+        print(
+            book_names[int(input_book_index)],
+            book_authors[int(input_book_index)],
+            book_issue_dates[int(input_book_index)],
+            book_return_dates[int(input_book_index)],
+            sep=" / "
+        )
+    else:
+        print("Invalid book number")
 
 
 def add_book():
@@ -70,54 +69,45 @@ def add_book():
     new_book_author = input("Enter new book author: ")
     new_book_issue_date = input("Enter new book issue date (dd-mm-yyyy): ")
     new_book_return_date = input("Enter new book return date (dd-mm-yyyy): ")
-    
+
     book_names.append(new_book_name)
     book_authors.append(new_book_author)
     book_issue_dates.append(new_book_issue_date)
     book_return_dates.append(new_book_return_date)
-    
-    print("✅ Book added successfully!")
+
+    print("Book added successfully!")
 
 
 def remove_book():
     remove_book_name = input("Enter book name to remove: ")
     if remove_book_name in book_names:
         index = book_names.index(remove_book_name)
-        # Pop from all lists safely
-        if index < get_safe_length():
-            book_names.pop(index)
-            book_authors.pop(index)
-            book_issue_dates.pop(index)
-            book_return_dates.pop(index)
-            print("✅ Book removed successfully!")
-        else:
-            print("⚠️ Invalid index detected — lists may be unsynced.")
+        book_names.pop(index)
+        book_authors.pop(index)
+        book_issue_dates.pop(index)
+        book_return_dates.pop(index)
+        print("Book removed successfully!")
     else:
-        print("❌ Book not found!")
-
+        print("Book not found!")
 
 
 if choice == 1:
     print_book_details()
 
-elif choice == 2:
-    search_input = input("Enter book name or author to search: ")  
-    found_books = search_book(search_input)
+if choice == 2:
+    print(book_names)
+    print("Check Availability Of Books")
+    search_input = input("Search book details: ")
+    if search_book(search_input, book_index=0):
+        print("Found", search_input, "in the book details.")
+    else:
+        print(search_input, "not found in the book details.")
 
-    if found_books:
-        print(f"\n✅ Found {len(found_books)} matching book(s):\n")
-        for i in found_books:
-            print(f"{book_names[i]} / {book_authors[i]} / {book_issue_dates[i]} / {book_return_dates[i]}")
-    else: 
-        print("❌ No matching books found.")
-
-elif choice == 3:
+if choice == 3:
+    print(book_names)
     add_book()
 
-elif choice == 4:
+if choice == 4:
+    print(book_names)
     remove_book()
-
-else:
-    print("Invalid choice.")
-
-
+    print(book_names)
