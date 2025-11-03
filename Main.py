@@ -69,4 +69,18 @@ fruits.insert(2, "citrus")
 
 fruits.sort()
 fruits.reverse()
-print(*fruits, sep=f"\n")
+# print(*fruits, sep=f"\n")
+
+fruits_tuple = ("apple", "banana", "cherry", "date")
+
+fruits_list = list(fruits_tuple) # converting tuple to list
+fruits_list.append("elderberry")
+
+fruits_tuple = tuple(fruits_list) # converting list back to tuple
+
+print(fruits_tuple)
+
+# apple, banana, *rest = fruits_tuple
+# print(apple)
+# print(banana)
+# print(type(rest)) 

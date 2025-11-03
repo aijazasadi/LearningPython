@@ -17,10 +17,6 @@ book_issue_dates = ['01-01-2020', '15-03-2021', '22-07-2019', '10-10-2018', '05-
 book_return_dates = ['01-02-2020', '15-04-2021', '22-08-2019', '10-11-2018', '05-06-2022']
 book_authors = ['Zed A. Shaw', 'Al Sweigart', 'Eric Matthes', 'Luciano Ramalho', 'Brett Slatkin']
 
-books=[book_names, book_issue_dates, book_return_dates, book_authors]
-
-books = [book_names[0], book_issue_dates[0], book_return_dates[0], book_authors[0]]
-
 books =[
     [book_names[0], book_issue_dates[0], book_return_dates[0], book_authors[0]], #[0][0]
     [book_names[1], book_issue_dates[1], book_return_dates[1], book_authors[1]], #
@@ -74,5 +70,24 @@ new_book = ["Deep Work", "12-12-2023", "12-01-2024", "Cal Newport"]
 # update_book(current_book, BOOK_NAMES, "Changed Book Title")
 
 add_book(new_book)
+
+books_tuple = tuple(books)
+
+for book in books_tuple:
+    print_book_details(book)
+    print("-" * 20)
+# count = 0
+
+# while count < len(books_tuple):
+#     print(books_tuple[count])
+#     count += 1
+
+# for index, book in enumerate(books_tuple):
+#     print(f"Index {index}: {book}")
+
+# for index in range(len(books_tuple)):
+#     print(f"Index {index}: {books_tuple[index]}")   
 # print(*books, sep="\n")
-print_all_books()
+# returned_book = books[books.index(new_book)]
+# print(returned_book)
+# print_all_books()
