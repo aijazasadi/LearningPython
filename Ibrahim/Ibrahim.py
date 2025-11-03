@@ -49,4 +49,6 @@ to remember it
 #.append()
 #.pop()
 #.remove()
-
+#.sort()
+#tuple
+#while 
