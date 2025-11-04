@@ -90,24 +90,31 @@ def remove_book():
     else:
         print("Book not found!")
 
-
-if choice == 1:
+while True:
+ if choice == 1:
     print_book_details()
 
-if choice == 2:
+ if choice == 2:
     print(book_names)
     print("Check Availability Of Books")
-    search_input = input("Search book details: ")
+    search_input = input("Search book details: ")       
     if search_book(search_input, book_index=0):
         print("Found", search_input, "in the book details.")
     else:
         print(search_input, "not found in the book details.")
 
-if choice == 3:
+ if choice == 3:
     print(book_names)
     add_book()
 
-if choice == 4:
+ if choice == 4:
     print(book_names)
     remove_book()
     print(book_names)
+
+    cont = input("Do you want to continue? (yes/no): ")
+ if cont.lower() != 'yes':
+        break
+
+
+
