@@ -20,4 +20,5 @@
 # Excercise 27/10/25
 - Add a new book with the same author
 - Now that you have two authors there should multiple books returned in find/get/search book function
+- Hint: You need a new collection say found_books in get_books and return found_books if any at the end of the function
 - Try and access book details of the found book resolve/change code  

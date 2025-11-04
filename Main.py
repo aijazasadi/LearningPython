@@ -58,8 +58,20 @@
 '''
 LISTS
 '''
-fruits = ["apple", "banana", "cherry", "date"]
+fruits= ["apple", "banana", "cherry", "date"]
 
+new_fruits = [
+    ["apple", 1.2],
+    ["banana", 0.5],
+    ["cherry", 2.5],
+    ["date", 3.0]
+]
+fruits_prices = [1.2, 0.5, 2.5, 3.0]
+more_fruits_fruits = [
+    fruits[0], fruits_prices[0],
+    fruits[1], fruits_prices[1],
+    fruits[2], fruits_prices[2],    
+    ]
 more_fruits = ["elderberry", "fig", "grape"]
 
 # fruits += more_fruits
@@ -78,9 +90,12 @@ fruits_list.append("elderberry")
 
 fruits_tuple = tuple(fruits_list) # converting list back to tuple
 
-print(fruits_tuple)
-
+# print(fruits_tuple)
+fruits.sort()
+# print(*new_fruits, sep="\n")
 # apple, banana, *rest = fruits_tuple
 # print(apple)
 # print(banana)
 # print(type(rest)) 
+
+print(more_fruits_fruits)

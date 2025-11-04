@@ -11,20 +11,23 @@ book_names = [
     'Automate the Boring Stuff with Python', #index 1
     'Python Crash Course', #index 2
     'Fluent Python', #index 3
-    'Effective Python' #index 4
+    'Effective Python', #index 4
+    'Python Tricks'  #index 5
 ]
 book_issue_dates = ['01-01-2020', '15-03-2021', '22-07-2019', '10-10-2018', '05-05-2022']
 book_return_dates = ['01-02-2020', '15-04-2021', '22-08-2019', '10-11-2018', '05-06-2022']
-book_authors = ['Zed A. Shaw', 'Al Sweigart', 'Eric Matthes', 'Luciano Ramalho', 'Brett Slatkin']
+book_authors = ['Zed A. Shaw', 'Al Sweigart', 'Eric Matthes', 'Luciano Ramalho', 'Brett Slatkin', 'Zed A. Shaw']
 
-books =[
-    [book_names[0], book_issue_dates[0], book_return_dates[0], book_authors[0]], #[0][0]
-    [book_names[1], book_issue_dates[1], book_return_dates[1], book_authors[1]], #
-    [book_names[2], book_issue_dates[2], book_return_dates[2], book_authors[2]],
-    [book_names[3], book_issue_dates[3], book_return_dates[3], book_authors[3]],
-    [book_names[4], book_issue_dates[4], book_return_dates[4], book_authors[4]]
-]   
-
+# books =[
+#     [book_names[0], book_issue_dates[0], book_return_dates[0], book_authors[0]], #[0][0]
+#     [book_names[1], book_issue_dates[1], book_return_dates[1], book_authors[1]], #
+#     [book_names[2], book_issue_dates[2], book_return_dates[2], book_authors[2]],
+#     [book_names[3], book_issue_dates[3], book_return_dates[3], book_authors[3]],
+#     [book_names[4], book_issue_dates[4], book_return_dates[4], book_authors[4]]
+# ]   
+books = []
+for index, value in enumerate(book_names):
+    books.append([book_names[index], book_issue_dates[index], book_return_dates[index], book_authors[index]])
 #function to print book details by index
 def print_book_details(book):
     books.sort()
@@ -73,9 +76,7 @@ add_book(new_book)
 
 books_tuple = tuple(books)
 
-for book in books_tuple:
-    print_book_details(book)
-    print("-" * 20)
+print(*books, sep="\n")
 # count = 0
 
 # while count < len(books_tuple):
@@ -90,4 +91,6 @@ for book in books_tuple:
 # print(*books, sep="\n")
 # returned_book = books[books.index(new_book)]
 # print(returned_book)
-# print_all_books()
+
+
+
