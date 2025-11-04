@@ -20,7 +20,7 @@ def add_book():
 
     print("Book added successfully!")
 
-#search book by index and print details
+#search book details by index function
 def print_book_details():
  if book_number >=0 and book_number < len(book_name):
     print (book_name[int(book_number)] , authors_name[int(book_number)] , genres_names[int(book_number)], sep= " / " )
@@ -34,10 +34,6 @@ def search_book(to_search, book_index):
             return all_details
     return None
 
-#input index search 
-book_number = int(input("Which book details do you want to see?: "))
-print_book_details()
-
 #input and search book by name
 search_input = input("Search book details:")  
 if search_book(search_input, book_index=0):
@@ -47,4 +43,7 @@ else:
 
 #Prototype book add
 add_book()
+
+#input index search 
+book_number = int(input("Which book details do you want to see?: "))
 print_book_details()
