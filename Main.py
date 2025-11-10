@@ -1,3 +1,4 @@
+from collections import namedtuple
 # WELCOME_MESSAGE = "Welcome to Learning python on VsCode"
 # #participant1 for the LibraryManagementSystem
 # participant_1 = input("Enter participiant1 : ")
@@ -97,5 +98,10 @@ fruits.sort()
 # print(apple)
 # print(banana)
 # print(type(rest)) 
+Fruit = namedtuple("Fruit", ['name', 'price', 'quantity']) # named tuple
 
-print(more_fruits_fruits)
+fruit1 = Fruit("apple", 1.2, 10)
+fruit2 = Fruit("banana", 2.2, 20)
+
+print(f"{fruit1.name}, {fruit1.price}, {fruit1.quantity}")
+# print(fruit1)
