@@ -14,8 +14,8 @@ book_names = [
     'Effective Python', #index 4
     'Python Tricks'  #index 5
 ]
-book_issue_dates = ['01-01-2020', '15-03-2021', '22-07-2019', '10-10-2018', '05-05-2022']
-book_return_dates = ['01-02-2020', '15-04-2021', '22-08-2019', '10-11-2018', '05-06-2022']
+book_issue_dates = ['01-01-2020', '15-03-2021', '22-07-2019', '10-10-2018', '05-05-2022', '12-12-2023']
+book_return_dates = ['01-02-2020', '15-04-2021', '22-08-2019', '10-11-2018', '05-06-2022', '12-01-2024']
 book_authors = ['Zed A. Shaw', 'Al Sweigart', 'Eric Matthes', 'Luciano Ramalho', 'Brett Slatkin', 'Zed A. Shaw']
 
 # books =[
@@ -28,6 +28,7 @@ book_authors = ['Zed A. Shaw', 'Al Sweigart', 'Eric Matthes', 'Luciano Ramalho',
 books = []
 for index, value in enumerate(book_names):
     books.append([book_names[index], book_issue_dates[index], book_return_dates[index], book_authors[index]])
+books.sort()
 #function to print book details by index
 def print_book_details(book):
     books.sort()
@@ -53,6 +54,13 @@ def get_book(to_search, book_index):
             return book
     return None
 
+def get_books(to_search, book_index):
+    found_books = []
+    for book in books:
+        if(to_search.strip().lower() in book[book_index].lower()):
+            found_books.append(book)
+    return found_books
+
 def update_book(book, book_arg, new_change):
     book[book_arg] = new_change
     books.sort()
@@ -74,9 +82,21 @@ new_book = ["Deep Work", "12-12-2023", "12-01-2024", "Cal Newport"]
 
 add_book(new_book)
 
-books_tuple = tuple(books)
+books = tuple(books)
+books = list(books)
 
+# add_book(["Python Tricks", "12-12-2023", "12-01-2024", "Dan Bader"])
 print(*books, sep="\n")
+# print(get_books("a. shaw", AUTHORS))
+
+# books = list(books_tuple)
+
+# print(type(books_tuple[2]))
+
+books[2][BOOK_NAMES] = "Modified Title"
+
+
+# print(books_tuple[2])
 # count = 0
 
 # while count < len(books_tuple):
