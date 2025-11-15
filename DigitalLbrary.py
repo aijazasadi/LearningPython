@@ -40,7 +40,7 @@ book = namedtuple("Book", ['name', 'issue_date', 'return_date', 'author', 'book_
 zipped_books = zip(book_names, book_issue_dates, book_return_dates, book_authors, book_prefaces)
 
 books = [book(name, issue_date, return_date, author, book_preface) for name, issue_date, return_date, author, book_preface in zipped_books]
-books.sort()
+books.sort() 
 #function to print book details by index
 def print_book_details(book):
     if(book in books):
@@ -105,6 +105,3 @@ add_book(new_book)
 
 delete_book(current_book)
 update_book(new_book, AUTHORS, "Asad Aijaz")
-
-
-

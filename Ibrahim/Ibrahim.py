@@ -17,7 +17,6 @@
 # """
 
 
-
 #legal variable names
 #constant variable usually in uppercase
 #participant_1 = participant_2 overwrite
@@ -52,21 +51,14 @@
 #.pop()
 #.remove()
 #.sort()
-#tuple
+#tuple ("Anything",)
 #while 
 #enumerate()
 #zip
 
-from DigitalLbrary import AUTHORS, BOOK_NAMES, ISSUE_DATES, RETURN_DATES, book_names, book_issue_dates, book_return_dates, book_authors, book_prefaces
+tuple = ("Tuples can not be changed and have a difinitve order", "And they allow for duplicate values", "They can be any data type"  "This is to be replaced")
+tuple_list = list(tuple) 
+tuple_list[2] = ("you can update tuples by making them a list first")
+tuple = tuple(tuple_list)
 
-from collections import namedtuple
-from datetime import datetime
-
-books = []
-book = namedtuple("Book", ['name', 'issue_date', 'return_date', 'author', 'book_preface'])
-zipped_books = zip(book_names, book_issue_dates, book_return_dates, book_authors, book_prefaces)
-
-books = [book(name, issue_date, return_date, author, book_preface) for name, issue_date, return_date, author, book_preface in zipped_books]
-books.sort() 
-
-print(books, sep="\n")
+print(tuple[:2]) 
