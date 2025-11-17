@@ -1,11 +1,6 @@
 from collections import namedtuple
 from datetime import datetime
-#constants for book details indices
-BOOK_NAMES = 0
-ISSUE_DATES = 1
-RETURN_DATES = 2
-AUTHORS = 3 
-
+import operator
 # list of book names
 book_names = [
     'Learn Python the Hard Way', # index 0
@@ -34,8 +29,8 @@ It is a must-read for Python developers who want to improve their skills."""
 ]
 
 books = []
-
-book = namedtuple("Book", ['name', 'issue_date', 'return_date', 'author', 'book_preface'])
+BOOK_COLS = ['name', 'issue_date', 'return_date', 'author', 'preface']
+book = namedtuple("Book", BOOK_COLS)
 
 zipped_books = zip(book_names, book_issue_dates, book_return_dates, book_authors, book_prefaces)
 
@@ -44,49 +39,69 @@ books.sort()
 #function to print book details by index
 def print_book_details(book):
     if(book in books):
-        print("Book Name: ", book[BOOK_NAMES])
-        print("Book Issue Date: ", book[ISSUE_DATES])
-        print("Book Return Date: ", book[RETURN_DATES])
-        print("Book Author: ", book[AUTHORS])
+        print("_" * 20)
+        print("Book Name: ", book.name)
+        print("Book Issue Date: ", book.issue_date)
+        print("Book Return Date: ", book.return_date)
+        print("Book Author: ", book.author)
     else:
         print("Invalid book ")
-        
+
+def print_books(books_to_be_printed):
+    for book in books_to_be_printed:
+        print_book_details(book)
+        print("-" * 20)        
 #printing all books
 def print_all_books():
      for book in books:
-        print(f"Details of Book {book}:")
         print_book_details(book)
         print("-" * 20)
 
-def get_book(to_search, book_index):
+def get_book(to_search, book_key):
     for book in books:
-        if(to_search.strip().lower() in book[book_index].lower()):
+        if(to_search.strip().lower() in getattr(book, book_key).lower()):
             return book
     return None
 
-def get_books(to_search, book_index):
+def get_books(to_search, book_key):
     found_books = []
     for book in books:
-        if(to_search.strip().lower() in book[book_index].lower()):
+        if(to_search.strip().lower() in getattr(book, book_key).lower()):
             found_books.append(book)
     return found_books
 
-def update_book(book, book_arg, new_change):
-    # replace will return a new namedtuple with the updated field
-    if(book_arg == AUTHORS):
-        updated_book = book._replace(author=new_change)
-    elif(book_arg == BOOK_NAMES):
-        updated_book = book._replace(name=new_change)
-    elif(book_arg == ISSUE_DATES):
-        updated_book = book._replace(issue_date=new_change)
-    elif(book_arg == RETURN_DATES):
-        updated_book = book._replace(return_date=new_change)
-    elif(book_arg == 4): # book_preface
-        updated_book = book._replace(book_preface=new_change)
+def get_books_by_date(max_date, date_field, comparison_operator):
+    """
+    Search for books based on a date comparison.
 
-    book_index = books.index(book) #find index of the old book
-    books[book_index] = updated_book #replace with updated book
-    books.sort()
+    Args:
+        max_date (str): The date to compare against in 'DD-MM-YYYY' format.
+        date_field (str): The field name to compare (e.g., 'issue_date', 'return_date').
+        comparison_operator (function): A function from the `operator` module (e.g., operator.le, operator.lt).
+
+    Returns:
+        list: Books matching the criteria.
+    """
+    max_date_obj = datetime.strptime(max_date, "%d-%m-%Y")  # Convert max_date to a datetime object
+    found_books = []
+
+    for book in books:
+        date_to_search = datetime.strptime(getattr(book, date_field), "%d-%m-%Y")  # Convert book's date to datetime
+        if comparison_operator(date_to_search, max_date_obj):  # Use the passed operator for comparison
+            found_books.append(book)
+
+    return found_books
+
+def update_book(book, book_arg, new_change):
+    if book_arg in book._fields:  # Check if book_arg is a valid field name
+        updated_book = book._replace(**{book_arg: new_change})  
+        book_index = books.index(book) #find index of the old book
+        books[book_index] = updated_book #replace with updated book
+        books.sort()
+        return updated_book
+    else:
+        print(f"Invalid book_arg: {book_arg}")
+    
 
 def delete_book(book_to_delete): #remove book from the books list (books.pop() will remove the last book)
     books.remove(book_to_delete)
@@ -96,12 +111,28 @@ def delete_book(book_to_delete): #remove book from the books list (books.pop() w
 def add_book(new_book): #appends to the books list at the end
     books.append(new_book)
     books.sort()
+    return new_book
 
-current_book = get_book("Brett   ", AUTHORS) # should return Zed A. Shaw
-
+current_book = get_book("Brett   ", "author") # should return Zed A. Shaw
+# adding new book
 new_book = book ("Deep Work", "12-12-2023", "12-01-2024", "Cal Newport", "Some preface about deep work.")
-add_book(new_book)
-# print(current_book)
+new_book = add_book(new_book)
 
+updated_book = update_book(new_book, "author", "Asad Aijaz")
+# print_book_details(updated_book)
+
+# print_book_details(new_book)
+# deleting current book
 delete_book(current_book)
-update_book(new_book, AUTHORS, "Asad Aijaz")
+
+'''operator.le means less than or equal to
+   operator.lt means less than
+   operator.ge means greater than or equal to
+   operator.gt means greater than
+   operator.eq means equal to
+   operator.ne means not equal to
+   operator.contains means contains
+'''
+found_books_bydate = get_books_by_date("15-03-2021", "issue_date", operator.gt)
+print_books(found_books_bydate)
+# print_book_details(found_books_bydate)
