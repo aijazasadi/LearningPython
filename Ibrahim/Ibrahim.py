@@ -55,10 +55,11 @@
 #while 
 #enumerate()
 #zip
+#del 
 
-tuple = ("Tuples can not be changed and have a difinitve order", "And they allow for duplicate values", "They can be any data type"  "This is to be replaced")
-tuple_list = list(tuple) 
-tuple_list[2] = ("you can update tuples by making them a list first")
-tuple = tuple(tuple_list)
+tuple_example = ("Tuples can not be changed and have a difinitve order", "And they allow for duplicate values", "They can be any data type",  "This is to be replaced")
+tuple_list = list(tuple_example) 
+tuple_list.append("you can update tuples by making them a list first")
+tuple_example = tuple(tuple_list)
 
-print(tuple[:2]) 
+print(tuple_example[0:5]) 
