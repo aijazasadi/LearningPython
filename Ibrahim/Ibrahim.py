@@ -57,9 +57,19 @@
 #zip
 #del 
 
+from collections import namedtuple
+import operator
+
 tuple_example = ("Tuples can not be changed and have a difinitve order", "And they allow for duplicate values", "They can be any data type",  "This is to be replaced")
 tuple_list = list(tuple_example) 
 tuple_list.append("you can update tuples by making them a list first")
 tuple_example = tuple(tuple_list)
 
+var_example1 = ["Write anything here"]
+var_example2 = ["Write something different here"]
+
+examplelist = namedtuple("examplelist", ["var_example1", "var_example2"])
+convertback = examplelist(var_example1, var_example2)
+
 print(tuple_example[0:5]) 
+print(convertback.var_example1) 
