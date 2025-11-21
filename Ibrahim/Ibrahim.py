@@ -60,16 +60,43 @@
 from collections import namedtuple
 import operator
 
+CONSTANT = 10  # This is a constant variable meaning it should not be changed
+
+#Tuple example
 tuple_example = ("Tuples can not be changed and have a difinitve order", "And they allow for duplicate values", "They can be any data type",  "This is to be replaced")
 tuple_list = list(tuple_example) 
 tuple_list.append("you can update tuples by making them a list first")
 tuple_example = tuple(tuple_list)
 
+#Getting length of tuple
+length_of_tuple = len(tuple_example)
+
+#Named Tuple example
 var_example1 = ["Write anything here"]
 var_example2 = ["Write something different here"]
 
 examplelist = namedtuple("examplelist", ["var_example1", "var_example2"])
 convertback = examplelist(var_example1, var_example2)
 
+#function example
+def function_example(function_arg1, function_arg2):
+    print("This is an example function", function_arg1, function_arg2)
+    return None
+
+#zip example
+a = ("Annas" )
+b = ("Ibrahim")
+zipped = zip(a, b)
+
+#printing examples
 print(tuple_example[0:5]) 
 print(convertback.var_example1) 
+function_example("this is arg1", "this is arg2")
+print("The length of the tuple is:", length_of_tuple)
+print(tuple(zipped))
+
+
+
+#Inworking
+operator_example = operator.add(5, 10)
+print("The operator example adds 5 and 10 to make:", operator_example)
