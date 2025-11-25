@@ -1,9 +1,12 @@
 from collections import namedtuple
+import operator
 
 '''
 LISTS
 '''
 fruits= ["apple", "banana", "cherry", "date"]
+operations = namedtuple("Operations", ['add', 'subtract', 'multiply', 'divide'])
+ops = operations(add='add', subtract='subtract', multiply='multiply', divide='divide')
 
 new_fruits = [
     ["apple", 1.2],
@@ -47,17 +50,33 @@ Fruit = namedtuple("Fruit", ['name', 'price', 'quantity']) # named tuple
 fruit1 = Fruit("apple", 1.2, 10)
 fruit2 = Fruit("banana", 2.2, 20)
 
-print(f"{fruit1.name}, {fruit1.price}, {fruit1.quantity}")
-# print(fruit1)
+my_fruits = {'apple', 'banana', 'cherry'}
+more_fruits = {'apple', 'fig', 'grape'}
+some_more_fruits = ['banana', 'cherry', 'date']
 
-program_to_continue = True
+# common_fruit = my_fruits.intersection(more_fruits)  # Intersection
 
-while(program_to_continue):
-    user_input = input("Enter fruit name to search (or 'exit' to quit): ")
-    if user_input.lower() == 'exit':
-        program_to_continue = False
-    else:
-        if user_input in fruits:
-            print(f"{user_input} is available.")
-        else:
-            print(f"{user_input} is not available.")
+# my_fruits = my_fruits | more_fruits   # Union
+# my_fruits.update(some_more_fruits)  # Union with list
+
+# my_fruits = my_fruits - more_fruits
+my_fruits = my_fruits.symmetric_difference(more_fruits)  # Difference
+
+# print(common_fruit)  # True])
+# print(my_fruits)
+
+fruit_dict = {
+    "fruit_name" : [
+        "apple",
+        "banana",
+        "cherry"
+    ],
+    "price_per_kg" : [1.2, 2.2, 3.5],
+    "quantity_in_kg" : [10, 20, 15],
+    "stock_available" : True
+}
+
+
+index_apple = fruit_dict["fruit_name"].index("apple")
+print(fruit_dict["fruit_name"][index_apple])  # Accessing value by key
+print(fruit_dict["price_per_kg"][index_apple])  # Accessing value by key

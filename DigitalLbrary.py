@@ -14,6 +14,7 @@ book_issue_dates = ['01-01-2020', '15-03-2021', '22-07-2019', '10-10-2018', '05-
 book_return_dates = ['01-02-2020', '15-04-2021', '22-08-2019', '10-11-2018', '05-06-2022', '12-01-2024']
 book_authors = ['Zed A. Shaw', 'Al Sweigart', 'Eric Matthes', 'Luciano Ramalho', 'Brett Slatkin', 'Zed A. Shaw']
 
+
 # Example multiline book prefaces
 book_prefaces = [
     """This book is a beginner's guide to learning Python programming.
@@ -30,6 +31,7 @@ It is a must-read for Python developers who want to improve their skills."""
 
 books = []
 BOOK_COLS = ['name', 'issue_date', 'return_date', 'author', 'preface']
+
 book = namedtuple("Book", BOOK_COLS)
 
 zipped_books = zip(book_names, book_issue_dates, book_return_dates, book_authors, book_prefaces)
@@ -70,8 +72,7 @@ def get_books(to_search, book_key):
             found_books.append(book)
     return found_books
 
-def get_books_by_date(max_date, date_field, comparison_operator):
-    """
+"""
     Search for books based on a date comparison.
 
     Args:
@@ -81,13 +82,16 @@ def get_books_by_date(max_date, date_field, comparison_operator):
 
     Returns:
         list: Books matching the criteria.
+      
     """
-    max_date_obj = datetime.strptime(max_date, "%d-%m-%Y")  # Convert max_date to a datetime object
+def get_books_by_date(date_to_compare, date_field, comparison_operator):
+    
+    date_to_compare_obj = datetime.strptime(date_to_compare, "%d-%m-%Y")  # Convert max_date to a datetime object
     found_books = []
 
     for book in books:
         date_to_search = datetime.strptime(getattr(book, date_field), "%d-%m-%Y")  # Convert book's date to datetime
-        if comparison_operator(date_to_search, max_date_obj):  # Use the passed operator for comparison
+        if comparison_operator(date_to_search, date_to_compare_obj):  # Use the passed operator for comparison
             found_books.append(book)
 
     return found_books
@@ -125,14 +129,28 @@ updated_book = update_book(new_book, "author", "Asad Aijaz")
 # deleting current book
 delete_book(current_book)
 
-'''operator.le means less than or equal to
-   operator.lt means less than
-   operator.ge means greater than or equal to
-   operator.gt means greater than
-   operator.eq means equal to
-   operator.ne means not equal to
-   operator.contains means contains
+'''operator.le means less than or equal to <=
+   operator.lt means less than <
+   operator.ge means greater than or equal to >=
+   operator.gt means greater than >
+   operator.eq means equal to ==
+   operator.ne means not equal to !=
+   operator.contains means contains in
 '''
-found_books_bydate = get_books_by_date("15-03-2021", "issue_date", operator.gt)
-print_books(found_books_bydate)
-# print_book_details(found_books_bydate)
+
+found_books_bydate = get_books_by_date("10-10-2018", "return_date", operator.ge)
+# print_books(found_books_bydate)
+books_dict = {}
+for book in books:
+    book = {
+        "book_name": book.name,
+        "issue_date": book.issue_date,
+        "return_date": book.return_date,
+        "author": book.author,
+        "preface": book.preface
+    }
+    books_dict[book["book_name"]] = book
+# Print the dictionary
+
+print(books_dict.keys()) #can be isbn if available
+# print(books_dict.get('Learn Python the Hard Way'))
