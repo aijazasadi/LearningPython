@@ -22,3 +22,7 @@
 - Now that you have two authors there should multiple books returned in find/get/search book function
 - Hint: You need a new collection say found_books in get_books and return found_books if any at the end of the function
 - Try and access book details of the found book resolve/change code  
+
+# Excercise 25/11/25
+- Play with the newly learned code, learn how to access it by keys 
+- Write a method that return books_dictionary, see DigitalLibrary.py as a reference
