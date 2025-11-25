@@ -149,8 +149,8 @@ for book in books:
         "author": book.author,
         "preface": book.preface
     }
-    books_dict[book["book_name"]] = book
+    books_dict[book["book_name"]] = book #using book name as key
 # Print the dictionary
 
-print(books_dict.keys()) #can be isbn if available
+print(books_dict) #can be isbn if available
 # print(books_dict.get('Learn Python the Hard Way'))
