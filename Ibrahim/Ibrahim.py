@@ -95,8 +95,19 @@ function_example("this is arg1", "this is arg2")
 print("The length of the tuple is:", length_of_tuple)
 print(tuple(zipped))
 
-
-
 #Inworking
 operator_example = operator.add(5, 10)
 print("The operator example adds 5 and 10 to make:", operator_example)
+
+#Sets
+set_example = {"Sets are unordered", "They do not allow duplicate values", "They can be any data type", "Same as other set"}
+set_example2 = {"Sets can be unioned", "They can be intersected", "They can be differenced", "Same as other set", "This will be removed"}
+
+# set_example = set_example.union(set_example2) This an also be use to uniion sets with lists
+
+set_example2 = set_example2 - {"This will be removed"} 
+
+set_union = set_example | set_example2
+set_intersection = set_example & set_example2
+
+print(set_example2)
