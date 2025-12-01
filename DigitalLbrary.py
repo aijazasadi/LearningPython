@@ -1,6 +1,8 @@
 from collections import namedtuple
 from datetime import datetime
 import operator
+import json
+
 # list of book names
 book_names = [
     'Learn Python the Hard Way', # index 0
@@ -26,7 +28,9 @@ It includes practical projects to help you build real-world skills.""",
     """This book dives deep into Python's advanced features.
 It is ideal for experienced programmers who want to write more efficient code.""",
     """This book provides tips and tricks for writing clean and effective Python code.
-It is a must-read for Python developers who want to improve their skills."""
+It is a must-read for Python developers who want to improve their skills.""",
+"""This book offers a collection of Python tips and tricks.
+It is designed to help you become a more proficient Python programmer.""",
 ]
 
 books = []
@@ -118,6 +122,7 @@ def add_book(new_book): #appends to the books list at the end
     return new_book
 
 current_book = get_book("Brett   ", "author") # should return Zed A. Shaw
+
 # adding new book
 new_book = book ("Deep Work", "12-12-2023", "12-01-2024", "Cal Newport", "Some preface about deep work.")
 new_book = add_book(new_book)
@@ -127,7 +132,7 @@ updated_book = update_book(new_book, "author", "Asad Aijaz")
 
 # print_book_details(new_book)
 # deleting current book
-delete_book(current_book)
+# delete_book(current_book)
 
 '''operator.le means less than or equal to <=
    operator.lt means less than <
@@ -152,5 +157,8 @@ for book in books:
     books_dict[book["book_name"]] = book #using book name as key
 # Print the dictionary
 
-print(books_dict) #can be isbn if available
-# print(books_dict.get('Learn Python the Hard Way'))
+# print(books_dict) #can be isbn if available
+my_book = books_dict.get('Learn Python the Hard Way')
+my_book_preface = my_book['preface']
+print(json.dumps(my_book_preface, indent=4))
+# print(json.dumps(books_dict, indent=4))
