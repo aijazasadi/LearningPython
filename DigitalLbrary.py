@@ -16,7 +16,6 @@ book_issue_dates = ['01-01-2020', '15-03-2021', '22-07-2019', '10-10-2018', '05-
 book_return_dates = ['01-02-2020', '15-04-2021', '22-08-2019', '10-11-2018', '05-06-2022', '12-01-2024']
 book_authors = ['Zed A. Shaw', 'Al Sweigart', 'Eric Matthes', 'Luciano Ramalho', 'Brett Slatkin', 'Zed A. Shaw']
 
-
 # Example multiline book prefaces
 book_prefaces = [
     """This book is a beginner's guide to learning Python programming.
@@ -108,14 +107,12 @@ def update_book(book, book_arg, new_change):
         books.sort()
         return updated_book
     else:
-        print(f"Invalid book_arg: {book_arg}")
-    
+        print(f"Invalid book_arg: {book_arg}") 
 
 def delete_book(book_to_delete): #remove book from the books list (books.pop() will remove the last book)
     books.remove(book_to_delete)
     books.sort()
     
-
 def add_book(new_book): #appends to the books list at the end
     books.append(new_book)
     books.sort()
@@ -128,11 +125,6 @@ new_book = book ("Deep Work", "12-12-2023", "12-01-2024", "Cal Newport", "Some p
 new_book = add_book(new_book)
 
 updated_book = update_book(new_book, "author", "Asad Aijaz")
-# print_book_details(updated_book)
-
-# print_book_details(new_book)
-# deleting current book
-# delete_book(current_book)
 
 '''operator.le means less than or equal to <=
    operator.lt means less than <
