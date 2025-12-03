@@ -43,6 +43,7 @@ return_dates = [
 #     [names[3], card_numbers[3], book_issued_names[3], issue_dates[3], return_dates[3]],
 #     [names[4], card_numbers[4], book_issued_names[4], issue_dates[4], return_dates[4]],
 # ]
+borrowers = []
 # Alternative way to create borrower records
 if(len(names) == len(card_numbers) == len(book_issued_names) == len(issue_dates) == len(return_dates)):
     print("All lists are of equal length. Proceeding to create borrower records.")

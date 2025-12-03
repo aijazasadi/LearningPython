@@ -27,3 +27,12 @@
 - Play with the newly learned code, learn how to access it by keys 
 - Write a method that return books_dictionary, see DigitalLibrary.py as a reference
 
+# Excercise 3/12/25
+- Make your own version of List.py
+- Add/Update/Delete borrowers in List.py 
+- Count, Sort all the elements in borrowers List
+- Introduce our orignal List Books(title, author, isbn, preface)
+- Borrowers should have (name, id or cardnumber)
+- Add borrowed_books(borrowed_id, book_isbn, issued_date, due_date, returned_date)
+- Carefully make the above structure. When books get issued add details in borrowed_list, due date should be 15 days from the date issued. Similarly when books get returned add return date.
+- Add is_book_available, it should return books that are not issued not in the borrowed list
