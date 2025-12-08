@@ -1,8 +1,14 @@
 
 #Default book lists
+import json
+
+
 book_name = ["Atomic Habits", "Breif history of Time", "Breif awnsers to big Questions", "Astrophysics for people in a Hurry", "Sun Zu Art of War"]
 authors_name = ["James Clear", "Stephen Hawking", "Stephen Hawking", "Neil deGrasse Tyson", "Sun Tzu"]
 genres_names = ["Self-help", "Science", "Science", "Science", "Military Strategy"]
+
+all_book_details = list(zip(book_name, authors_name, genres_names))
+print(all_book_details)
 
 #Add a book 
 def add_book():
@@ -43,3 +49,16 @@ add_book()
 #input index search 
 book_number = int(input("Which book details do you want to see?: "))
 print_book_details()
+
+#Dictionary
+book_dict = {}
+for book_name in books:
+    book = {
+        'name': book_name,
+        'author': authors_name,
+        'genre': genres_names
+    }
+    book_dict[book_name["book_name"]] = book
+
+my_book = book_dict.get('Atomic habits')
+
