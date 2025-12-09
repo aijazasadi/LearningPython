@@ -66,17 +66,39 @@ my_fruits = my_fruits.symmetric_difference(more_fruits)  # Difference
 # print(my_fruits)
 
 fruit_dict = {
-    "fruit_name" : [
-        "apple",
-        "banana",
-        "cherry"
-    ],
-    "price_per_kg" : [1.2, 2.2, 3.5],
-    "quantity_in_kg" : [10, 20, 15],
-    "stock_available" : True
+    "apple" : {
+        "price_per_kg" : 5,
+        "quantity_in_kg" : 10,
+        "is_stock_available" : True
+        },
+    "banana" : {
+        "price_per_kg" : 2,
+        "quantity_in_kg" : 20,
+        "is_stock_available" : True
+        },
+    "cherry" : {
+        "price_per_kg" : 15,
+        "quantity_in_kg" : 5,
+        "is_stock_available" : False
+        }
 }
 
 
-index_apple = fruit_dict["fruit_name"].index("apple")
-print(fruit_dict["fruit_name"][index_apple])  # Accessing value by key
-print(fruit_dict["price_per_kg"][index_apple])  # Accessing value by key
+# index_apple = fruit_dict["fruit_name"].index("apple")
+# print(fruit_dict["fruit_name"][index_apple])  # Accessing value by key
+# print(fruit_dict["price_per_kg"][index_apple])  # Accessing value by key
+
+is_apple_in_stock = False
+
+if(fruit_dict["apple"] ):
+    is_apple_in_stock = True
+
+print("_" * 20)
+for key, value in fruit_dict.items():
+    print(f"{key}: {value}")
+#message = f"Hello, my name is {name}, I am {age} years old, and I live in {city}."
+message = f"Banana Status {fruit_dict['banana']['is_stock_available']}"
+print(message)
+
+#updating banana stock
+fruit_dict["banana"]["price_per_kg"] = 2.5

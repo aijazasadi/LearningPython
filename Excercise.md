@@ -33,6 +33,7 @@
 - Count, Sort all the elements in borrowers List
 - Introduce our orignal List Books(title, author, isbn, preface)
 - Borrowers should have (name, id or cardnumber)
-- Add borrowed_books(borrowed_id, book_isbn, issued_date, due_date, returned_date)
+- Add borrowed_books(id, borrower_id, book_isbn, issued_date, due_date, returned_date)
+Note: Date should be converted to date object, see DigitaLibrary.py for reference
 - Carefully make the above structure. When books get issued add details in borrowed_list, due date should be 15 days from the date issued. Similarly when books get returned add return date.
-- Add is_book_available, it should return books that are not issued not in the borrowed list
+- Add is_book_available(True/False), it should return books that are not issued not in the borrowed list
