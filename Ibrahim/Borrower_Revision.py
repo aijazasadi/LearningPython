@@ -42,24 +42,22 @@ return_dates = [
 arranged_list = []
 
 
-#Make the list len equal to each other 
-if len(names) == len(card_numbers) == len(book_names) == len(issue_dates) == len(return_dates): 
+#Make the list len equal to each other
+if len(names) == len(card_numbers) == len(book_names) == len(issue_dates) == len(return_dates):
     print("The length of the 5 lists are same")
-    length_of_lists = len(names) 
+    length_of_lists = len(names)
 
- #arange the list with the help of for loops
- 
     for i in range(length_of_lists) :
-     format_list = [
 
-     names[i], 
-     card_numbers[i],
-     book_names[i],
-     issue_dates[i],
-     return_dates[i]
+      format_list = [
+
+           names[i],
+           card_numbers[i],
+           book_names[i],
+           issue_dates[i],
+           return_dates[i]
      ]
-     
-arranged_list.append(format_list) 
-print(arranged_list[2])
 
-#search for a specific name in the Names list and print all the details of that borrower
+      arranged_list.append(format_list) 
+
+print(arranged_list[3])
