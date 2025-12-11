@@ -1,6 +1,6 @@
-#termanologies 
-#Indentation is the space used to show hierarchy in control structures'
-#Statements are the instructions that are given to the computor program 
+"""termanologies 
+Indentation is the space used to show hierarchy in control structures'
+Statements are the instructions that are given to the computor program """
 
 
 #Print
@@ -21,10 +21,22 @@ var1 = 2
 var2 = 4
 print(var1 + var2)
 
+"""
+myvar = "John"
+my_var = "John"
+_my_var = "John"
+myVar = "John"
+MYVAR = "John"
+myvar2 = "John
+
+Cant add numbers, (-) or space
+"""
+
 print("--" * 20)
 
 #Input
 storage = input("Whatever:")
+
 number_storage = int(input("Type a integer:"))
 print(type(number_storage))
 
