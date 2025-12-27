@@ -127,6 +127,23 @@ print(replaced.replace("&", "and"))
 splitter = "Every End"
 print(splitter.split("/")) 
 
-print("--" * 20)
+#a + b = c
 
+keys = 82 
+print(f"there are {keys} on a keyboard")
+print(f"there are {keys:2f} on a keyboard")# u can also perform math functions 
+
+print("The new hardest level in \"gd\" is called greif")
+
+print("It\'s")
+print("He\\she")
+print("Different \n line")
+print("This \r Delete")
+print("Tab\t?")
+print("Backspaces\b")
+#\f
+print("\x48\x65\x6c\x6c\x6f") #This will say hello hex value
+print("\110\145\154\154\157") #This will also say hello in octal value
+
+print("--" * 20)
 
