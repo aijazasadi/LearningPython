@@ -116,7 +116,16 @@ print(len(calling))
 txt = "Serotonin is called the mother of all chemicals"
 to_find = "chemicals"
 print(to_find in txt)
+print(to_find not in txt)
 
+#.lower() all to lower
+#.upper() ALL TO UPPER
+#.strip() removes unwanted spaced
+replaced = "P & G"
+print(replaced.replace("&", "and"))
+
+splitter = "Every End"
+print(splitter.split("/")) 
 
 print("--" * 20)
 
