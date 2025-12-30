@@ -37,3 +37,12 @@
 Note: Date should be converted to date object, see DigitaLibrary.py for reference
 - Carefully make the above structure. When books get issued add details in borrowed_list, due date should be 15 days from the date issued. Similarly when books get returned add return date.
 - Add is_book_available(True/False), it should return books that are not issued not in the borrowed list
+
+# Revision Exercises
+
+# Strings
+- If the book title is longer than 10 characters, print only the first 10 followed by ...
+- print every second character of the book
+- replace spaces with underscore(_) for eg The Ugly Duckling would The_Ugly_Duckling
+- Palindromes are words that would be same if reversed like Level, Kayak, Bob, Civic, Dad try reversing them
+- if you go through all of try making a list of words. Now take an input and see if that word is present in the list, you need to trim/lowercase and use "in" operator
