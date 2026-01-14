@@ -198,3 +198,33 @@ title()	Converts the first character of each word to upper case
 """
 print("--" * 20)
 
+#Boolean
+print("Boolean")
+
+fat_man = 21
+little_boy = 15
+
+if fat_man > little_boy:
+    print("That is a big bomb")
+else: 
+    print("That is a thin bomb")
+
+print(bool("All is true until blank or 0 or none or false"))
+# Leaving Functions
+
+x = 200
+print(isinstance(x, int))
+
+print("--" * 20)
+
+#Operators
+print("Operators")
+
+sum1 = 9 + 11
+sum2 = sum1 + 1 
+
+# + | - | * | / | % | ** Exponent | // Floor division | 
+# Division returns a float where as Floor division a integer 
+
+
+print("--" * 20)
