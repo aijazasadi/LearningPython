@@ -226,5 +226,38 @@ sum2 = sum1 + 1
 # + | - | * | / | % | ** Exponent | // Floor division | 
 # Division returns a float where as Floor division a integer 
 
+"""
+= 
++=
+-= 
+*=
+/=
+%=
+//=
+**=
+&=
+|=
+^=
+>>=
+<<=
+
+"""
+print(Neil:= "Genius")
+
+"""
+==
+!=
+>
+<
+>=
+<=
+
+"""
+# (and) Returns True if both statements are true
+# (or) Returns True if one of the statements is true
+# (not) Reverse the result, returns False if the result is true
+# (is) Returns True if both variables are the same object
+# (is not) Returns True if both variables are not the same object
+
 
 print("--" * 20)
