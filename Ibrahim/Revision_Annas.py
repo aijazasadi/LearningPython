@@ -258,6 +258,10 @@ print(Neil:= "Genius")
 # (not) Reverse the result, returns False if the result is true
 # (is) Returns True if both variables are the same object
 # (is not) Returns True if both variables are not the same object
+# (in) Returns True if a sequence with the specified value is present in the object
+# (not in) Returns True if a sequence with the specified value is not present in the object
 
+# Bitwise Operators (Go and Search up what they do Fatty)
+# Operator Precedence (It is just like Python version of PEMDAS or BODMAS)
 
 print("--" * 20)
