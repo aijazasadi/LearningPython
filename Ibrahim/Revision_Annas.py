@@ -265,3 +265,22 @@ print(Neil:= "Genius")
 # Operator Precedence (It is just like Python version of PEMDAS or BODMAS)
 
 print("--" * 20)
+
+#Lists
+print("Lists")
+
+#Store collections of Data
+mylist = ["Sympathy", "Empathy", "Compassion", "Compassion"] #Indexed allow Dupes 
+print(len(mylist)) #They are ordered and Changeable
+
+# -1 to the len to find the index and a list can be any data type 
+
+print(type(mylist)) #<class 'list'>
+# list()
+
+print(mylist[-3])
+print(mylist[:3])
+
+if "Empathy" in mylist:
+    print("Are you blind ofcourse it is")
+
