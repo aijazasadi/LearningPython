@@ -270,17 +270,43 @@ print("--" * 20)
 print("Lists")
 
 #Store collections of Data
-mylist = ["Sympathy", "Empathy", "Compassion", "Compassion"] #Indexed allow Dupes 
-print(len(mylist)) #They are ordered and Changeable
+access_list = ["Sympathy", "Empathy", "Compassion", "Compassion"] #Indexed allow Dupes 
+print(len(access_list)) #They are ordered and Changeable
 
 # -1 to the len to find the index and a list can be any data type 
 
-print(type(mylist)) #<class 'list'>
+print(type(access_list)) #<class 'list'>
 # list()
 
-print(mylist[-3])
-print(mylist[:3])
+print(access_list[-3])
+print(access_list[:3])
 
-if "Empathy" in mylist:
+if "Empathy" in access_list:
     print("Are you blind ofcourse it is")
 
+change_list = ["Change name", "Glorious model o", "Roccat kone pro", "Gpro superlight"]
+change_list[0] = "The 0 mouse" # You can also use ranges  
+print(change_list)
+
+change_list.insert(2, "Bloody A40")
+print(change_list)
+
+add_list = ["Ajazz ak820 pro", "Alua F75", "Wooting 60he"]
+add_list.append("Kisnt Kn85")
+print(add_list) 
+
+change_list.extend(add_list) #can be used in all data structures
+print(change_list)  
+
+remove_list = ["Random Chinese brand","Nvidia", "AMD", "Intel"]
+remove_list.remove("Intel") # if there are 2 instances then it will remove the first one
+print(remove_list)  
+
+remove_list.pop(2) #if the index is not specified then .pop removes the last item
+print(remove_list) 
+
+del remove_list[0] #can also delete a whole list
+print(remove_list) 
+
+remove_list.clear() 
+print(remove_list) 
