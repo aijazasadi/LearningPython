@@ -310,3 +310,21 @@ print(remove_list)
 
 remove_list.clear() 
 print(remove_list) 
+
+#for loop
+loop_list = ["Samsung", "MSI", "Asus", "Alienware"]
+
+ # We are defining the range by len so we dont have to count and we define in len what list we want the lenght of.
+for any_var in range(len(loop_list)): # We generally name any_var (i)
+    print(loop_list[i])
+
+#smallest for loop
+[print(any_var) for any_var in loop_list]
+
+#While loop 
+
+while_list = ["Corshair", "Gskill", "Crutial", "Inland"]
+any_var2 = 0 # you have to define this unlike for loops and this is also the index 
+while any_var2 < len(while_list):
+    print(while_list[any_var2])
+    any_var2 = any_var2 + 1 #limiter
